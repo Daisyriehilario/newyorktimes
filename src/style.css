@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.header-container {
+    position: relative;
+    height: 200px;
+   
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+    color: black;
+    font-family: "Ewert", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allow z-index to work */
+    z-index: 2; /* Ensure the nav is above the background image */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    }
+
+/* Burger Menu */
+.burger {
+    display: none; /* Keep it hidden by default */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    margin-left: auto; /* Move the burger menu to the right */
+}
+
+.burger span {
+    background-color: #333;
+    height: 3px;
+    width: 100%;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navigation links on mobile by default */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .burger {
+        display: flex; /* Show burger on mobile */
+        margin-top: 10px; /* Adjust the margin as needed */
+    }
+
+    nav ul.show {
+        display: flex; /* Show the links when burger menu is clicked */
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    nav ul li a {
+        color: #333;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    nav {
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .news-layout {
+        flex-direction: column;
+    }
+
+    #opinion-sidebar {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+.carousel {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+    display: none;
+}
+
+.news-layout {
+    display: flex;
+    padding: 20px;
+}
+
+.news-grid {
+    flex: 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.news-card img {
+    width: 100%;
+    height: auto;
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin: 10px;
+    color: #333;
+}
+
+.news-card p {
+    font-size: 0.9rem;
+    margin: 0 10px 10px;
+    color: #666;
+}
+
+#opinion-sidebar {
+    flex: 1;
+    margin-left: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#opinion-sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.opinion-item {
+    margin-bottom: 15px; /* Add margin for each opinion item */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #666;
+}
